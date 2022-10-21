@@ -4,7 +4,9 @@
  * add class active
  * https://stackoverflow.com/questions/72880348/adding-active-class-based-on-current-url
  */
- const current = window.location.href; // http://agenda.local/steuerung.html
+ const current = window.location.href.replace(/\/+$/, ''); // http://agenda.local/steuerung.html
+ const host = window.location.hostname;
+ const origin = window.location.origin;
  const pathname = window.location.pathname; // /steuerung.html
  const url = pathname.split('/').pop(); // steuerung.html
  const steuerung = 'steuerung.html';
@@ -21,3 +23,9 @@
       elem.classList.add('active');
     }
  });
+ document.querySelectorAll('.navbar-nav a.nav-link').forEach(function(elem){
+  if(current == origin) {
+    elem.classList.remove('active');
+  }
+});
+// console.log(current, host, origin);
