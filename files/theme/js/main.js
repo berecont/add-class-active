@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * add class active
  * https://stackoverflow.com/questions/72880348/adding-active-class-based-on-current-url
